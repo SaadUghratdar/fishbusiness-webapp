@@ -1,0 +1,8 @@
+.btn-addFish{
+    height: 36px;
+    width: fit-content !important; 
+    float: right;
+    background-color: hsl(190, 20%, 58%) !important;
+ 
+}
+

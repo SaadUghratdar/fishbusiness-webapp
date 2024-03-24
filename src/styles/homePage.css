@@ -1,0 +1,157 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main{
+  margin: 0 !important;
+  padding: 10px !important;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
+
+}
+.container {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding:0px;
+}
+
+.table-container {
+  width: 100%;
+  margin-top: 20px;
+  overflow: auto; /* Changed overflow property */
+  height: 535px;
+  
+}
+
+.cardContainerDiv{
+  display: flex;
+  justify-content:start;
+  gap: 50px;
+  align-content: center;
+  
+}
+
+.counterCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  width: 275px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
+
+}
+
+.cashCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding:15px;
+  width: 275px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
+
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  padding: 0;
+  table-layout:fixed; 
+  
+}
+tr{
+  border: 1px solid hsl(0, 0%, 60%);
+  border-radius: 7px;
+  font-weight: 300;
+  
+}
+tr:hover{
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+th, td {
+  border-right: 0;
+  height: 45px;
+  padding: 3px;
+  /* padding-right: 2px; */
+  text-align: left;
+  overflow: hidden; /* Added overflow property */
+  white-space: nowrap; /* Added white-space property */
+  font-size: large;
+}
+
+th {
+  background-color: hsl(0, 0%, 69%);
+  height: 45px;
+  font-weight: 900;
+}
+
+input{
+  width: 100%;
+  padding: 5px;
+  font-size: large;
+}
+
+button{
+  background-color: hsl(190, 40%, 50%);
+  color: white;
+  margin-right: 2px;
+  margin-left: 0;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
+  border-radius: 2px;
+
+}
+
+.editButton{
+ 
+  background-color: #27aeef;
+  padding: 7px;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
+  margin-right: 10px;
+}
+
+.deleteButton{
+  background-color: hsl(0, 100%, 50%) !important;
+  padding: 7px;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
+}
+
+.saveButton{
+  background-color: green !important;
+  background-color: #27aeef;
+  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
+  border-radius: 2px;
+
+}
+
+.lastCol{
+  width: 114px !important;
+}
+.weightCol{
+  width: 112px !important;
+}
+.rateCol{
+  width: 112px !important;
+}
+.payCol{
+  width: 110px !important;
+}
+

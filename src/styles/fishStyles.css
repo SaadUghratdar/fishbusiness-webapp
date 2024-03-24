@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tableWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scrollableTable {
+    width: 100%;
+    overflow: auto;
+    max-height: calc(100vh - 50px);
+}
+
+.scrollableTable::-webkit-scrollbar {
+    width: 0;  /* Hide scrollbar by setting width to 0 */
+    background: transparent;  /* Optional: Make scrollbar background transparent */
+}
+.fishTable{
+    width: 600px;
+    table-layout: auto;
+}
+
+.fishInputContainer{
+    margin-top: 50px;
+    width: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+
+}
+
+.fishInputContainer form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+
+.fishInputName{
+    width:400px;
+}
+
+.fishCol{
+    width: 500px;
+}

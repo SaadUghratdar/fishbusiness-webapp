@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200&display=swap');
+
+*{
+  font-family:Montserrat,sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.containerSideBar{
+  display: flex;
+
+}
+
+main{
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebarDiv{
+  background-image: linear-gradient(360deg, #000957, #32C1CD);
+  color: black;
+  height: 100vh;
+  width: 300px;
+  transition: all 0.5s;
+  border-radius: 7px;
+}
+
+
+
+.topSection{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  padding: 35px 15px;
+  align-content: center;
+}
+
+.topSection h1{
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+}
+.compLogo{
+  font-size: 25px;
+  color: #F7F7F7;
+}
+.toggleBars{
+  display: flex;
+  font-size: 25px;
+  padding-top: 6px;
+  color: #F7F7F7;
+  padding: 0;
+  transition: all 0.5s;
+}
+
+.toggleBars:hover{
+  cursor: pointer;
+}
+
+.link{
+  display: flex;
+  color: #F7F7F7;
+  margin: 2px 4px;
+  padding: 15px 15px;
+  gap: 15px;
+  transition: all 0.1s;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.link:hover{
+  background-color: hsl(190, 20%, 58%,0.5);
+  transition: all 0.5s;
+}
+
+.active{
+  background-color: hsl(190, 20%, 58%,0.5);
+  
+}
+
+.icon, .link_text{
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+
+
+
