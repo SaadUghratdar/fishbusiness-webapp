@@ -3,3 +3,65 @@
     padding: 0;
     box-sizing: border-box;
 }
+.tableWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+}
+.scrollableTable {
+    width: 100%;
+    overflow: auto;
+    max-height: calc(100vh - 50px);
+}
+.scrollableTable::-webkit-scrollbar {
+    width: 0;  /* Hide scrollbar by setting width to 0 */
+    background: transparent;  /* Optional: Make scrollbar background transparent */
+}
+.supplierTable{
+    width: 800px ;
+    box-shadow: 2px 2px hsl(0, 0%, 50%,0.2);
+    table-layout: auto;
+}
+.inputContainer{
+    margin-top: 50px;
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.suppNameInput{
+    width:535px;
+}
+
+.numberInput{
+    width: 235px;
+}
+
+.suppCol{
+    width: 350px;
+    margin-left: 10px;
+}
+
+.numCol{
+    width: 175px;
+}
+
+.salesCol{
+    width: 100px;
+}
+
+.dateDiv{
+    justify-content: left;
+}
+
+.inputContainer {
+    margin-bottom: 20px;
+  }
+  
+  .inputContainer form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
