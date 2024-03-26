@@ -1,10 +1,27 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState,useEffect} from 'react';
 import './suppStyle.css';
+import axios from 'axios';
 
 const SuppliersTable = () => {
   const [suppInputs, setSuppInputs] = useState({ suppName: '', boxes: '', pieces: '' });
   const [suppliers, setSuppliers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); 
 
+  useEffect(() => {
+    const fetchSuppliers = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get('http://localhost:8000/suplierentry/show');
+        setSuppliers(response.data);
+      } catch (error) {
+        console.error('Error fetching suppliers:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchSuppliers();
+  }, []);
   const handleAddSupplier = (e) => {
     e.preventDefault();
     // if (suppInputs.suppName.trim() !== '' && suppInputs.boxes !== '' && suppInputs.pieces !== '') {

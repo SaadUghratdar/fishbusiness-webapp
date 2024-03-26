@@ -1,9 +1,26 @@
-import React, {useState }  from 'react';
+import React, {useState,useEffect}  from 'react';
+import axios from 'axios';
 import './supp.css'
 const MasterSupp = () => {
   const [suppInputs, setSuppInputs] = useState({ suppName: '', phoneNum: '', sales:'0'});
   const [suppliers, setSuppliers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); 
+  useEffect(() => {
+    const fetchSuppliers = async () => {
+      setIsLoading(true);
+      try {
+        const response = await axios.get('http://localhost:8000/suplier/show');
+        setSuppliers(response.data);
+        
+      } catch (error) {
+        console.error('Error fetching suppliers:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
+    fetchSuppliers();
+  }, []);
   const handleAddSupplier = (e) => {
     e.preventDefault();
     // if (suppInputs.suppName.trim() !== '' && suppInputs.phoneNum !== '') {
@@ -48,7 +65,7 @@ const MasterSupp = () => {
       </form>
     </div>
     
-    <table className='supplierTable'>
+    <table className='supplierMasterTable'>
       <thead>
         <tr>
           <th className='suppCol'>Supplier</th>

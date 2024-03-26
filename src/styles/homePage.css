@@ -155,3 +155,32 @@ button{
   width: 110px !important;
 }
 
+.counterInputContainer{
+  width: 100%;
+  /* border: 2px solid gray; */
+}
+.counterInputContainer form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.suppInput{
+  width: 250px;
+}
+
+.custInput{
+  width: 200px;
+}
+.subInput{
+  width: 200px;
+}
+.fishInput{
+  width: 200px;
+}
+.weightInput{
+  width: 100px;
+}
+.rateInput{
+  width: 100px;
+}
+

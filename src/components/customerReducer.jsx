@@ -1,5 +1,7 @@
 
 import { v4 as uuidv4 } from 'uuid';
+
+
 //The initialState of the table
 export const initialState = {
     counterTotal:0,
@@ -23,26 +25,27 @@ export const initialState = {
 const customerReducer=(state,action)=>{
     switch(action.type){
        case 'ADD' :
-           
-        console.log('in add action',state);
+        console.log('in add action',action.payload);
            return{...state,
                rows:[
                 {
                 id:uuidv4(), 
-                supplierName: '',
-                customerName: '',
-                subCustomer: '',
-                fishName: '',
-                // lotNos:'',
-                // box:'',
-                weight: '',
-                rate: '',
+                supplierName:action.payload.suppName,
+                customerName: action.payload.custName,
+                subCustomer: action.payload.subName,
+                fishName: action.payload.fishName,
+                weight: action.payload.weight,
+                rate: action.payload.rate,
                 total: '',
-                // payment:'', 
                },...state.rows,],
             };
         
-        
+       case 'FETCH_CUSTOMER_DATA':
+           return{
+               ...state,
+               rows:action.payload,
+           };  
+           
        case 'SAVE_ROW':
            return {
                ...state,

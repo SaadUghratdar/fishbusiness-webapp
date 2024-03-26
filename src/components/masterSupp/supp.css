@@ -19,7 +19,7 @@
     width: 0;  /* Hide scrollbar by setting width to 0 */
     background: transparent;  /* Optional: Make scrollbar background transparent */
 }
-.supplierTable{
+.supplierMasterTable{
     width: 800px ;
     box-shadow: 2px 2px hsl(0, 0%, 50%,0.2);
     table-layout: auto;
@@ -44,11 +44,11 @@
 }
 
 .numCol{
-    width: 175px;
+    width: 200px;
 }
 
 .salesCol{
-    width: 100px;
+    width: 150px;
 }
 
 .dateDiv{
@@ -58,7 +58,7 @@
 .inputContainer {
     margin-bottom: 20px;
   }
-  
+
   .inputContainer form {
     display: flex;
     flex-wrap: wrap;

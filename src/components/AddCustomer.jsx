@@ -8,9 +8,11 @@ import '../styles/homePage.css'
 import { initialState } from './customerReducer';
 const AddCustomer = () => {
   const {state,dispatch}=useCustomersContext();
+  const [counterInputs,setCounterInputs]=useState({suppName:'',custName:'',subName:'',fishName:'',weight:'',rate:''})
   const [editIndex, setEditIndex] = useState(null);
   const [editedRow, setEditedRow] = useState({});
-
+ 
+  
   //This is used to calculate the TOTALCOUNTER whenever the state changes
   useEffect(() => {
       dispatch({ type: 'UPDATE_COUNTER_TOTAL' });
@@ -19,11 +21,31 @@ const AddCustomer = () => {
 
 
   //To add the rows and set the edited index to 0
-  const handleAddRow = () => {
-    dispatch({ type: 'ADD' });
-    handleEditRow(0,state.rows.length+1)
-  };
+  const handleAddRow=async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch('http://localhost:8000/cashcounter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(counterInputs),
+      });
 
+      if (!response.ok) {
+        throw new Error('Failed to add customer');
+      }
+
+      // const newCustomer = await response.json();
+
+      // // Dispatch action to update local state with the new customer
+      // dispatch({ type: 'ADD', payload: newCustomer });
+
+      // Clear the form for next entry
+      setCounterInputs({ suppName: '', custName: '', subName: '', fishName: '', weight: '', rate: '' });
+    } catch (error) {
+      console.error('Error adding customer:', error);
+      // Handle errors appropriately, e.g., display error message to user
+    }
+  };
   //To delete the row
   const handleDeleteRow = (id) => {
     dispatch({ type: 'DELETE_ROW', payload: id });
@@ -85,8 +107,54 @@ const AddCustomer = () => {
       <h1>{formatCurrency(state.cashTotal)}</h1>
       </div>
     </div>
-   
-    <button onClick={handleAddRow}>Add Row</button>
+    <div className='counterInputContainer'>
+      <form onSubmit={handleAddRow}>
+          <input
+             type="text"
+             className='suppInput'
+             placeholder='Supplier'
+             value={counterInputs.supplierName}
+             onChange={(e) => setCounterInputs({...counterInputs,suppName : e.target.value})}
+            />
+          <input
+              type="text"
+              className='custInput'
+              placeholder='Customer'
+              value={counterInputs.customerName}
+              onChange={(e) =>setCounterInputs({...counterInputs,custName : e.target.value})}
+           />
+          <input
+              type="text"
+              className='subInput'
+              placeholder='SubCustomer'
+              value={counterInputs.subCustomer}
+              onChange={(e) => setCounterInputs({...counterInputs,subName : e.target.value})}
+          />
+           <input
+               type="text"
+               className='fishInput'
+               placeholder='Fish'
+               value={counterInputs.fishName}
+               onChange={(e) => setCounterInputs({...counterInputs,fishName : e.target.value})}
+           />
+           <input
+              type="number"
+              className='weightInput'
+              placeholder='Weight'
+              value={counterInputs.weight}
+              onChange={(e) => setCounterInputs({...counterInputs,weight : e.target.value})}
+            />
+            <input
+              type="number"
+              className='rateInput'
+              placeholder='Rate'
+              value={counterInputs.rate}
+              onChange={(e) => setCounterInputs({...counterInputs,rate : e.target.value})}
+            />
+
+            <button type='submit'>Add Row</button>
+      </form>
+    </div>
     <table>
       <thead>
         <tr>

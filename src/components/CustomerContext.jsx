@@ -1,7 +1,7 @@
-import React,{useContext,useReducer,createContext} from 'react'
+import React,{useContext,useReducer,createContext,useState} from 'react'
 import { initialState } from './customerReducer';
 import customerReducer from './customerReducer';
-
+import CustomerDataFetcher from './CustomerDataFetcher';
 const CustomersContext=createContext(initialState)
 
 export function CustomerProvider({children}){
@@ -14,6 +14,7 @@ export function CustomerProvider({children}){
 
   return (
     <CustomersContext.Provider value={{state,dispatch}} >
+        <CustomerDataFetcher/>
         {children}
     </CustomersContext.Provider>
   )
