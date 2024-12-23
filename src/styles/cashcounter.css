@@ -1,8 +1,179 @@
-.btn-addFish{
-    height: 36px;
-    width: fit-content !important; 
-    float: right;
-    background-color: hsl(190, 20%, 58%) !important;
- 
+/* General body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
 
+
+/* Container for date input */
+.counterDateDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: center; /* Center the date input */
+}
+
+.summDetailsDiv{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid  #3b5168;
+}
+/* Date input styling */
+.date-input-container {
+    display:flex;
+    align-items: center;
+    margin: 0 auto; 
+}
+
+.date-input-container label {
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.date-input-container input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.date-input-container input:focus {
+    border-color: #007bff;
+}
+
+/* Sidebar (aside) styling */
+.supplier-sidebar {
+    width: 240px;
+    background-color: #2d3e50;
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.supplierAsideDiv h1 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+}
+
+.supplier-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.supplier-list li {
+    padding: 12px;
+    margin-bottom: 10px;
+    background-color: #34495e;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: #ecf0f1;
+    font-weight: 550;
+}
+
+.supplier-list li:hover {
+    background-color: #3b5168;
+}
+
+.supplier-list li.active {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Main content styling */
+.detailsMainDiv {
+/* Adjusted for the sidebar width */
+    padding: 30px;
+    background-color: #ffffff;
+  
+    min-height: 100vh;
+}
+
+.detailsMainDiv h3 {
+    margin: 5px 0px;
+    color:  #3b5168;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.detailsMainDiv table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.detailsMainDiv th,
+.detailsMainDiv td {
+    padding: 5px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.detailsMainDiv th {
+    background-color: #f4f4f9;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    font-weight: 700;
+}
+
+.detailsMainDiv tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+
+.detailsMainDiv tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.detailsMainDiv tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.detailsMainDiv .total-row {
+    font-weight: bold;
+    background-color: #e9ecef;
+}
+
+.detailsMainDiv p {
+    color: #666;
+    font-size: 16px;
+}
+
+
+@media print{
+    .detailsMainDiv{
+        margin: 20px 20px 20px 40px ;
+    }
+}
+
+.detailsMainDiv table .time{
+    width: 100px;
+}
+.detailsMainDiv table .weight{
+    width: auto ;
+}
+
+.detailsMainDiv table .rate{
+    width: auto ;
+} 
+
+.detailsMainDiv table .total{
+    width: auto ;
+}

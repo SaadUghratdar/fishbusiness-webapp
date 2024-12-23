@@ -3,11 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-.tableWrapper {
+.masterTableWrapper {
     width: 100%;
     display: flex;
     flex-direction: column;
-   
+    margin-top: 20px;
+    gap: 20px;
     align-items: center;
 }
 .scrollableTable {
@@ -19,49 +20,95 @@
     width: 0;  /* Hide scrollbar by setting width to 0 */
     background: transparent;  /* Optional: Make scrollbar background transparent */
 }
+
+
 .supplierMasterTable{
-    width: 800px ;
-    box-shadow: 2px 2px hsl(0, 0%, 50%,0.2);
+    border-collapse: collapse;
+    width: 1100px !important;
+    /* border-radius: 10px; /* Adjust the radius value to your preference */
+    /* overflow: hidden; */ 
+    /* box-shadow: 2px 2px hsl(0, 0%, 50%,0.2); */
     table-layout: auto;
 }
-.inputContainer{
+
+.supplierMasterTable td,th{
+    border: none;
+    padding: 7px !important;
+   
+}
+.supplierMasterTable th{
+    border-right: none;
+    
+}
+.mastrtInputContainer{
     margin-top: 50px;
-    width: 800px;
+    width: 1000px;
     display: flex;
     justify-content: space-evenly;
 }
-.suppNameInput{
-    width:535px;
+
+.masterSuppForm{
+    display: flex;
+    justify-content:center;
+    margin-top: 30px;
+    gap: 10px;
+
+}
+.masterSuppNameInput{
+    width:435px;
 }
 
 .numberInput{
-    width: 235px;
+    width: 230px;
 }
 
-.suppCol{
-    width: 350px;
-    margin-left: 10px;
+.commissionInput{
+    width: 100px;
 }
 
-.numCol{
+.discountInput{
+    width: 100px;
+}
+
+
+.masterSuppCol{
+    width: 450px !important;
+}
+
+.masterNumCol{
     width: 200px;
 }
 
-.salesCol{
-    width: 150px;
+.masterSalesCol{
+    width: 200px !important;
+    text-align: center !important;
+}
+.masterCommCol{
+    width: fit-content;
+
+}
+
+.masterDiscountCol{
+    width: 80px;
 }
 
 .dateDiv{
     justify-content: left;
 }
 
-.inputContainer {
-    margin-bottom: 20px;
-  }
+.masterCommColAlign{
+    text-align: center;
+}
 
-  .inputContainer form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
+.masterDiscountColAlign{
+    text-align: center;
+}
+
+.masterSalesColAlign{
+    text-align: center;
+}.masterExpenseColAlign{
+    text-align: center;
+}
+
+
+

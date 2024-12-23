@@ -7,7 +7,6 @@
 main{
   margin: 0 !important;
   padding: 10px !important;
-  box-shadow: 0 3px 4px rgb(0 0 0 / 0.5);
 
 }
 .container {
@@ -29,10 +28,9 @@ main{
 
 .cardContainerDiv{
   display: flex;
-  justify-content:start;
+  justify-content:space-between;
   gap: 50px;
   align-content: center;
-  
 }
 
 .counterCard{
@@ -66,7 +64,7 @@ main{
 }
 table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse ;
   margin-top: 20px;
   padding: 0;
   table-layout:fixed; 
@@ -81,11 +79,13 @@ tr{
 tr:hover{
   background-color: #f0f0f0;
   font-weight: 600;
+  text-align: center;
+
 }
-th, td {
-  border-right: 0;
+table th, table td {
+  border:none;
   height: 45px;
-  padding: 3px;
+  padding: 2px !important;
   /* padding-right: 2px; */
   text-align: left;
   overflow: hidden; /* Added overflow property */
@@ -106,7 +106,7 @@ input{
 }
 
 button{
-  background-color: hsl(190, 40%, 50%);
+  background-color: hsl(226, 64%, 35%);
   color: white;
   margin-right: 2px;
   margin-left: 0;
@@ -119,7 +119,6 @@ button{
 }
 
 .editButton{
- 
   background-color: #27aeef;
   padding: 7px;
   border-radius: 2px;
@@ -142,17 +141,23 @@ button{
 
 }
 
+.subCol{
+  width: 150px;
+}
+/* .fishColm{
+  width: 200px;
+} */
 .lastCol{
   width: 114px !important;
 }
 .weightCol{
-  width: 112px !important;
+  width: 100px !important;
 }
 .rateCol{
-  width: 112px !important;
+  width: 100px !important;
 }
-.payCol{
-  width: 110px !important;
+.totalCol{
+  width: 110px;
 }
 
 .counterInputContainer{
@@ -161,26 +166,44 @@ button{
 }
 .counterInputContainer form {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+
 }
 .suppInput{
   width: 250px;
 }
-
 .custInput{
-  width: 200px;
+  width: 230px;
 }
 .subInput{
-  width: 200px;
+  width: 150px;
 }
 .fishInput{
   width: 200px;
 }
 .weightInput{
-  width: 100px;
+  width: 90px;
 }
 .rateInput{
-  width: 100px;
+  width: 90px;
+}
+
+@media print{
+  .dashboardMainDiv{
+    margin: 20px 20px 20px 55px ;
+  }
+
+  .counterInputContainer{
+    display: none;
+  }
+
+  .lastCol{
+    display: none;
+  }
+
+  .buttonCol{
+    display: none;
+  }
 }
 

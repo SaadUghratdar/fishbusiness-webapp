@@ -1,0 +1,229 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.dailySupplierWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.billingTableDiv {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+}
+.billWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  gap: 5px;
+}
+
+.billHeader {
+  text-align: center;
+  font-size: large;
+  color: black;
+  
+}
+.billInfoDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  /* gap: 395px; */
+  
+  align-content: center;
+}
+.billInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  align-items: center;
+  font-size: x-large;
+  white-space: nowrap;
+  margin-top: 5px;
+}
+
+.billInfo p {
+  font-weight: 600;
+}
+.spanClass {
+  color: black;
+  font-weight: 900;
+  width: 500px;
+  margin-right: 10px;
+  /* text-decoration: underline; */
+}
+.billBoxDiv{
+  white-space: nowrap;
+  font-size: larger;
+  font-weight: 900;
+  align-content: center;
+}
+.bills {
+  /* height: 500px !important; */
+  width: 800px !important;
+  /* border: 2px solid blue; */
+  border-collapse: collapse;
+}
+
+.bills tr,
+.bills td {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+  height: 36px;
+  border: 1.5px solid rgb(146, 142, 142);
+
+  /* border: 1.5px solid black !important; */
+}
+
+.bills th {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  padding: 5px;
+  height: 33px !important;
+  border: 1.5px solid rgb(146, 142, 142);
+
+  /* border: 1.5px solid !important; */
+  /* background-color: grey !important; */
+}
+
+.calculationDiv {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+  /* gap: 70px; */
+  margin-top: 5px;
+ 
+}
+.calcTable {
+  width: 700px;
+}
+.calcTable th {
+  font-size: 30px;
+  font-weight: 600 !important;
+  text-align: center;
+  color: black;
+  background-color: white;
+  border: 1.5px solid gray;
+}
+
+.calcTable td {
+  text-align: center;
+  font-weight: 700;
+  border: 1.5px solid grey;
+  font-size: 30px;
+}
+
+.calcTable td {
+  width: fit-content;
+}
+
+.serialCol {
+  width: 80px !important;
+}
+.rupeeCol {
+  width: 125px;
+}
+.itemCol {
+  width: 300px;
+}
+
+.piecesCol {
+  width: 80px;
+}
+
+.gramCol {
+  width: 90px;
+}
+/* 
+ .bills td{
+    height: 5px !important;
+    padding: 6px !important;
+    border: 1px !important;
+} */
+.expenseTable tr td {
+  font-size: 20px;
+  text-align: left;
+  font-weight: 600;
+  padding: 4px;
+  height: 40px;
+  border: 1.5px solid rgb(146, 142, 142);
+}
+
+.expenseTable th {
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  padding: 5px;
+  height: 40px !important;
+  border: 1.5px solid rgb(146, 142, 142);
+}
+
+.makeBillButton:disabled {
+  background-color: white;
+  border: blue;
+  color: blue;
+}
+
+.dailyContents {
+  margin-top: 10px;
+  align-content: center;
+  justify-content: space-around;
+  font-size: 30px;
+  font-weight: 600;
+  
+}
+
+.dailyContents p {
+  margin-top: 2px;
+}
+
+.fishNames {
+  overflow: auto;
+}
+
+@media print {
+  .editButton {
+    display: none;
+  }
+  .saveButton {
+    display: none;
+  }
+}
+
+.billMainDiv {
+  margin-left: 10px;
+  padding:35px 35px 35px 45px;
+}
+
+.button:active:enabled {
+  transform: scale(0.95); /* Scale down on click */
+}
+
+.button:disabled {
+  background-color: white; /* White background when disabled */
+  color: #2f3e83; /* Blue text when disabled */
+
+  font-weight: 900;
+  border: 5px solid #2f3e83 !important; /* Blue border when disabled */
+}
+
+.boxesBillTable{
+  width: 600px;
+  margin: 4px !important;
+}
+
+.boxesBillTable th,
+.boxesBillTable td{
+  text-align: center;
+  height: 15px;
+  padding: 4px !important;
+  border: 1.5px solid rgb(146, 142, 142);
+  font-weight: 600;
+}

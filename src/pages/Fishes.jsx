@@ -1,6 +1,9 @@
 import {React,useState,useEffect} from 'react'
 import axios from 'axios';
 import '../styles/fishStyles.css'
+import '../styles/App.css';
+
+
 const Fishes = () => {
   const [fishInputs, setFishInputs] = useState({ fishname: ''});
   const [fishes, setFishes] = useState([]);
@@ -124,19 +127,17 @@ const Fishes = () => {
         <form onSubmit={selectedFishId ? handleSaveEdit : handleAddFish}>
           <input
             className='fishInputName'
-            id="autocompleteInput"
+            // id="autocompleteInput"
             list="datalistOptions" 
             type="text"
             placeholder="Fish Name"
             value={fishInputs.fishname}
-            onChange={(e) => setFishInputs({ ...fishInputs, fishname: e.target.value })}
+            onChange={(e) => setFishInputs({ ...fishInputs, fishname: e.target.value.toUpperCase() })}
           />
           <datalist id="datalistOptions">
-            <option value="San Francisco"/>
-            <option value="New York"/>
-            <option value="Seattle"/>
-            <option value="Los Angeles"/>
-            <option value="Chicago"/>
+            {fishes.map((fish,index)=>(
+             <option value={fish.fishName}/>
+            ))}
           </datalist>
           {selectedFishId===null
           ? 
@@ -163,9 +164,9 @@ const Fishes = () => {
             <tr key={index}>
               <td>{fish.fishName}</td>
               <td>
-              <button onClick={() => handleEditFish(fish._id)}>EDIT</button>
+              <button className='editButton' onClick={() => handleEditFish(fish._id)}>EDIT</button>
               {/* onClick={handleEditFish(fish._id)} */}
-              <button onClick={() => handleDeleteFish(fish._id)}>DELETE</button>
+              <button className='deleteButton' onClick={() => handleDeleteFish(fish._id)}>DELETE</button>
               </td>
             </tr>
           ))}

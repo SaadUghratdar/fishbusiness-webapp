@@ -7,6 +7,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+   
     align-items: center;
 }
 .scrollableTable {
@@ -18,22 +19,29 @@
     width: 0;  /* Hide scrollbar by setting width to 0 */
     background: transparent;  /* Optional: Make scrollbar background transparent */
 }
-.supplierTable{
-    width: 700px;
+.customerMasterTable{
+    width: 800px ;
+    box-shadow: 2px 2px hsl(0, 0%, 50%,0.2);
     table-layout: auto;
 }
-.dailySuppInputcontainer{
-    margin-top: 20px;
-    width: 700px;
+.masterCustInputContainer{
+    margin-top: 50px;
+    width: 800px;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
-.mastSuppNameInput{
+
+.mastCustForm{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 7px;
+}
+.mastCustNameInput{
     width:335px;
 }
 
-.boxesInput,.piecesInput{
-    width: 135px;
+.mastNumberInput{
+    width: 235px;
 }
 
 .suppCol{
@@ -41,29 +49,24 @@
     margin-left: 10px;
 }
 
-.boxCol,.pieceCol{
-    width: 175px;
+.numCol{
+    width: 200px;
 }
 
-.dailySuppDateDiv{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
+.salesCol{
+    width: 150px;
 }
 
-.dailySuppInputContainer {
-    width: 100%;
- 
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-    
+.dateDiv{
+    justify-content: left;
+}
+
+.inputContainer {
+    margin-bottom: 20px;
   }
-  
-  .dailySuppInputContainer form {
-    width: 100%;
+
+  .inputContainer form {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-   
   }
-  

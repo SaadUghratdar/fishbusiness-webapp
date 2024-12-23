@@ -18,15 +18,20 @@ main{
 }
 
 .sidebarDiv{
-  background-image: linear-gradient(360deg, #000957, #32C1CD);
+  /* background-image: linear-gradient(360deg, #000957, #75b0b6); */
+  background-color: #2d3e50;
   color: black;
-  height: 100vh;
+  min-height: 100vh;
   width: 300px;
   transition: all 0.5s;
   border-radius: 7px;
 }
 
-
+@media print{
+  .sidebarDiv{
+    display: none;
+  }
+}
 
 .topSection{
   display: flex;

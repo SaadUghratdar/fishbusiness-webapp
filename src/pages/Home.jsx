@@ -1,12 +1,9 @@
-import React from 'react'
-import { CustomerProvider } from '../components/CustomerContext'
-import AddInputFields from '../components/AddInputFields'
-
+import {React,memo} from 'react'
+import '../styles/App.css';
 import AddCustomer from '../components/AddCustomer'
 import '../styles/homePage.css'
+
 const Home = () => {
-  
-  
   return (
       <div className='container'>
         <div className='table-container'>
@@ -16,4 +13,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default memo(Home);

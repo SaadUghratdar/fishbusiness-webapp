@@ -9,7 +9,7 @@ import { ImHome } from "react-icons/im";
 import { SiGoogleforms } from "react-icons/si";
 import { NavLink } from 'react-router-dom';
 import { FaUsers } from "react-icons/fa";
-
+import { BsPersonBoundingBox } from "react-icons/bs";
 const Sidebar = ({ children }) => {
     const[isOpen,setIsOpen]=useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -47,7 +47,12 @@ const Sidebar = ({ children }) => {
     {
       path:'/customers',
       name:'Customers',
-      icon:<IoFish/>
+      icon:<BsPersonBoundingBox />
+    },
+    {
+      path:'/paypending',
+      name:'Credits',
+      icon:<SiGoogleforms />
     }
   ];
 
@@ -55,7 +60,7 @@ const Sidebar = ({ children }) => {
     <div style={{visibility:isOpen?"block":"none"}} className="containerSideBar" activeClassName="menuActive">
       <div style={{width:isOpen?"300px":"60px"}} className="sidebarDiv" >
         <div className="topSection">
-          <h1 p-0 style={{display:isOpen?"block":"none"}} className="compLogo">LOGO</h1>
+          <h1  style={{display:isOpen?"block":"none"}} className="compLogo">LOGO</h1>
           <div style={{marginLeft:isOpen?"30px":"0px"}}className="toggleBars">
               <div className='inBars'><FaBars onClick={toggle}/></div>
           </div>

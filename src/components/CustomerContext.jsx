@@ -4,17 +4,17 @@ import customerReducer from './customerReducer';
 import CustomerDataFetcher from './CustomerDataFetcher';
 const CustomersContext=createContext(initialState)
 
-export function CustomerProvider({children}){
+export function CustomerProvider({children, selectedDate}){
     
     const [state,dispatch]=useReducer(
         customerReducer,
         initialState
     );
 
-
+  
   return (
     <CustomersContext.Provider value={{state,dispatch}} >
-        <CustomerDataFetcher/>
+        {/* <CustomerDataFetcher date={selectedDate} /> */}
         {children}
     </CustomersContext.Provider>
   )

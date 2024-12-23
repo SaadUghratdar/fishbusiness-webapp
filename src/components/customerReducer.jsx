@@ -1,5 +1,4 @@
 
-import { v4 as uuidv4 } from 'uuid';
 
 
 //The initialState of the table
@@ -7,18 +6,6 @@ export const initialState = {
     counterTotal:0,
     cashTotal:0,
     rows:[],
-    //  inputValues: {
-    //   rowId:'',
-    //   supplierName: '',
-    //   customerName: '',
-    //   subCustomer: '',
-    //   fishName: '',
-    //   lotNos:'',
-    //   box:'',
-    //   weight: '',
-    //   rate: '',
-    //   total: '',
-    // },
 };
 
 //The main reducer function to change the state according to the dispatch type
@@ -29,24 +16,27 @@ const customerReducer=(state,action)=>{
            return{...state,
                rows:[
                 {
-                id:uuidv4(), 
+                id:action.payload.id, 
                 supplierName:action.payload.suppName,
                 customerName: action.payload.custName,
                 subCustomer: action.payload.subName,
                 fishName: action.payload.fishName,
                 weight: action.payload.weight,
+                pieces: action.payload.pieces,
                 rate: action.payload.rate,
-                total: '',
+                total: action.payload.total,
                },...state.rows,],
             };
         
        case 'FETCH_CUSTOMER_DATA':
+           console.log("IN FETCH DATA ACTION!!");
            return{
                ...state,
                rows:action.payload,
            };  
            
        case 'SAVE_ROW':
+           
            return {
                ...state,
                rows: state.rows.map(row => {
@@ -82,7 +72,7 @@ const customerReducer=(state,action)=>{
               // Calculate the sum of the total field for each row
            const totalSum = state.rows.reduce((accumulator, row) => accumulator + parseFloat(row.total || 0), 0);
            const cashSum = state.rows.reduce((accumulator, row) => {
-            if (row.customerName === 'Cash') {
+            if (row.customerName === 'CASH SALES') {
                 return accumulator + parseFloat(row.total || 0);
             }
                  return accumulator;

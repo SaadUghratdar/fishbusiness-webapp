@@ -8,8 +8,12 @@ import Billing from './pages/Billing.jsx';
 import Suppliers from './pages/Suppliers.jsx'
 import Fishes from './pages/Fishes';
 import Customers from './pages/Customers';
+import PayPending from './pages/PayPending';
 import { CustomerProvider } from './components/CustomerContext';
-import './App.css';
+import GenerateInvoice from './components/billComps/GenerateInvoice';
+import InvoicePage from './pages/InvoicePage';
+import CustomerCredit from './pages/CustomerCredit'
+
 
 function App() {
   return (
@@ -25,7 +29,9 @@ function App() {
             <Route path="/dailySuppliers" element={<Suppliers />} />
             <Route path="/fishes" element={<Fishes />} />
             <Route path="/customers" element={<Customers />} />
-
+            <Route path="/paypending" element={<PayPending />} />
+            <Route path="/invoice/:supplierId/:selectedDate" element={<InvoicePage/>} />
+            <Route path="/creditDetails/:customerId" element={<CustomerCredit/>}/>
           </Routes>
         </CustomerProvider>
       </Sidebar>
